@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class StudentRegistrationFormTests {
+public class StudentRegistrationFormTests extends TestBase {
 
     @Test
     void successfulFillFormTest() {
@@ -86,7 +86,7 @@ public class StudentRegistrationFormTests {
             $x("//td[text()='Hobbies']").parent().shouldHave(text(hobby1 + ", " + hobby2 + ", " + hobby3));
             $x("//td[text()='Picture']").parent().shouldHave(text(picture));
             $x("//td[text()='Address']").parent().shouldHave(text(currentAddress));
-            $x("//td[text()='State and City']").parent().shouldHave(text(state + " " + city));
+            $x("//td[text()='State and City']").parent().shouldHave(text(state + " error " + city));
         });
     }
 }
